@@ -1,0 +1,40 @@
+.DS_Store
+
+# IDE Files
+#-------------------------
+.codepro
+.settings
+/.idea/
+
+# PSD Files
+#-------------------------
+*.psd
+
+# RAR Files
+#-------------------------
+*.rar
+
+# BAT Files
+#-------------------------
+*.bat
+
+# Class Files
+#-------------------------
+*.class
+
+# Log Files
+#-------------------------
+.log
+
+# Gradle cache
+/.gradle/
+/gradle/
+
+
+/backups/
+/bin/
+/target/
+/target-idea/
+/out/
+/eclipse-target/
+/build/

@@ -1,0 +1,70 @@
+buildscript {
+    ext.kotlin_version = '1.3.41'
+    ext.jnaVersion = '5.3.1'
+    ext.gdxVersion = '1.9.9'
+
+    repositories {
+        jcenter()
+    }
+
+
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath 'com.github.jengelman.gradle.plugins:shadow:5.1.0'
+    }
+
+}
+
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version '1.3.41'
+}
+
+group 'org.aesir'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+apply plugin: "kotlin"
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+
+    compile group: "org.jire.arrowhead", name: "arrowhead", version: "1.3.3"
+
+    compile group: 'org.openjfx', name: 'javafx-graphics', version: '12.0.1'
+
+    compile "com.badlogicgames.gdx:gdx:$gdxVersion"
+    compile "com.badlogicgames.gdx:gdx-box2d:$gdxVersion"
+
+    compile "com.badlogicgames.gdx:gdx-backend-lwjgl:$gdxVersion"
+    compile "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-desktop"
+    compile "com.badlogicgames.gdx:gdx-box2d-platform:$gdxVersion:natives-desktop"
+
+    compile group: 'net.java.dev.jna', name: 'jna', version: jnaVersion
+    compile group: 'net.java.dev.jna', name: 'jna-platform', version: jnaVersion
+
+    compile group: 'org.jetbrains.kotlin', name: 'kotlin-stdlib', version: kotlin_version
+    compile group: 'org.jetbrains.kotlin', name: 'kotlin-reflect', version: kotlin_version
+    compile group: 'org.jetbrains.kotlin', name: 'kotlin-script-runtime', version: kotlin_version
+    compile group: 'org.jetbrains.kotlin', name: 'kotlin-script-util', version: kotlin_version
+    compile group: 'org.jetbrains.kotlin', name: 'kotlin-compiler-embeddable', version: kotlin_version
+    compile group: 'org.jetbrains.kotlin', name: 'kotlin-scripting-compiler-embeddable', version: kotlin_version
+
+    compile group: 'io.github.classgraph', name: 'classgraph', version: '4.8.43'
+
+    compile group: 'it.unimi.dsi', name: 'fastutil', version: '8.2.3'
+
+    compile group: 'org.yaml', name: 'snakeyaml', version: '1.24'
+
+    //Fasterxml - Kotlin module
+    compile group: 'com.fasterxml.jackson.module', name: 'jackson-module-kotlin', version: '2.9.7'
+}
+
+compileKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
+compileTestKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
